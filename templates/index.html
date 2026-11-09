@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFAQ - College Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="bot-icon">🤖</div>
+            <div>
+                <h1>SmartFAQ</h1>
+                <p>Your College Assistant</p>
+                <span class="status">● Online</span>
+            </div>
+        </header>
+
+        <main class="chat-box" id="chat-box" aria-live="polite">
+            <div class="message bot-message">
+                <p>Hello! 👋 Welcome to SmartFAQ.</p>
+                <p>Ask me anything about admissions, courses, fees, placements, or scholarships!</p>
+            </div>
+        </main>
+
+        <div class="suggestions">
+            <button type="button" class="suggestion">How can I apply for admission?</button>
+            <button type="button" class="suggestion">Are scholarships available?</button>
+            <button type="button" class="suggestion">Does the college provide placements?</button>
+        </div>
+
+        <form id="chat-form" class="chat-form">
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your question..."
+                maxlength="500"
+                autocomplete="off"
+                aria-label="Your question"
+                required
+            >
+            <button type="submit" id="send-button">Send ➤</button>
+        </form>
+
+        <p id="error-message" role="alert"></p>
+
+        <footer>
+            <p>SmartFAQ · College Information Assistant</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
